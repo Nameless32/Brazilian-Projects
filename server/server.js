@@ -1,16 +1,19 @@
 require('./config/mogoose.config');
 
-const http = require('http');
 const express = require('express');
 const serverConfig = require('./config/server.config.json');
+const consign = require('consign');
+const bodyParser = require('body-parser');
 
 const app = express();
 
 app.use(express.static("../frontend"));
+app.use(bodyParser.json());
 
+consign()
+  .include('routes')
+  .into(app);
 
-const server = http.createServer(app);
-server.listen(serverConfig.port, () => console.log("up"));
-
-
-
+app.listen(serverConfig.port, () => {
+  console.log("server up on port " + serverConfig.port);
+});

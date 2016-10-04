@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="calc">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calc</title>
+
+    <script src="../lib/angular/angular.min.js"></script>
+
+</head>
+<body>
+
+<div class="" ng-controller="hexToDecController">
+    <input type="text" ng-model="hex">
+    <input type="text" ng-model="dec">
+
+    <button ng-click="calc()">calcular</button>
+</div>
+
+<script>
+    angular.module('calc',[]).controller('hexToDecController', function ($scope) {
+        $scope.hex = 0;
+        $scope.dec = 0;
+        $scope.calc = function () {
+            $scope.dec = parseInt($scope.hex, 16);
+        };
+
+        $scope.$watch('hex', $scope.calc);
+
+    });
+</script>
+</body>
+</html>

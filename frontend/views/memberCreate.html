@@ -1,0 +1,37 @@
+<h3><span class="glyphicon glyphicon-user"></span>Novo membros</h3>
+
+<form ng-submit="save()">
+    <div class="form-group">
+        <label>Nick name</label>
+        <input class="form-control" type="text" ng-model="current.nickName">
+    </div>
+    <div>
+        <label>Email</label>
+        <input class="form-control" type="text" ng-model="current.email">
+    </div>
+
+    <div>
+        <label>Password</label>
+        <input class="form-control" type="password" ng-model="current.password">
+    </div>
+
+    <div class="form-group pull-right">
+        <input type="submit" value="save">
+    </div>
+
+    <div class="form-group">
+        <label>Função</label>
+
+        <div ng-repeat="role in roles">
+            <input type="checkbox" ng-model="role.selected"> {{role.name}}
+        </div>
+    </div>
+
+    <div class="clearfix">
+
+    </div>
+
+</form>
+
+<pre>{{ current | json }}</pre>
+<pre>{{ roles | json }}</pre>
