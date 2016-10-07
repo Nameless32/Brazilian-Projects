@@ -1,4 +1,4 @@
-<h3><span class="glyphicon glyphicon-user"></span>Novo membros</h3>
+<h3><span class="glyphicon glyphicon-user"></span>Edit member</h3>
 
 <form ng-submit="save()">
     <div class="form-group">
@@ -9,12 +9,6 @@
         <label>Email</label>
         <input class="form-control" type="text" ng-model="current.email">
     </div>
-
-    <div class="form-group">
-        <label>Password</label>
-        <input class="form-control" type="password" ng-model="current.password">
-    </div>
-
 
     <div class="form-group">
         <label>Função</label>
@@ -28,11 +22,7 @@
         <input class="btn btn-primary" type="submit" value="save">
     </div>
 
-    <div class="clearfix">
 
-    </div>
+    <div class="clearfix"></div>
 
 </form>
-
-<pre>{{ current | json }}</pre>
-<pre>{{ roles | json }}</pre>

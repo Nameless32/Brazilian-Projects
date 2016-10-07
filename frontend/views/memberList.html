@@ -4,7 +4,23 @@
     <a class="btn btn-primary" href="#/memberCreate">New member</a>
 </div>
 
+<div class="clearfix"></div>
 
-<li>
-    <ul ng-repeat="member in members">{{member | json}}</ul>
-</li>
+<table class="table table-striped">
+    <thead>
+        <th>nickname:</th>
+        <th>email:</th>
+        <th>roles:</th>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="member in members">
+            <td><a ng-href="#/memberEdit/{{member._id}}">{{member.nickName}}</a></td>
+            <td>{{member.email}}</td>
+            <td>{{member.roles}}</td>
+        </tr>
+    </tbody>
+
+
+
+</table>

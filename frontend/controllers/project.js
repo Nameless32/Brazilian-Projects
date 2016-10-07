@@ -14,8 +14,8 @@ app.config(function ($routeProvider) {
 app.controller("projectListController", function ($http, $scope) {
   $http.get('/api/project').then(function (response) {
     $scope.projects = response.data;
-  }, function () {
-
+  }, function (rejection) {
+    console.error(rejection);
   });
 });
 
