@@ -20,5 +20,5 @@ app.controller("projectListController", function ($http, $scope) {
 });
 
 app.controller("projectNewController", function ($scope, $http) {
-
+  $http.create
 });
